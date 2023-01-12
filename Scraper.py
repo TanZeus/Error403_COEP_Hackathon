@@ -16,10 +16,10 @@ for ra in tree.find_all("p"):
     para1=ra.text
     para+=para1
 
-concat_para=para.replace(',','|')
-concat_para=concat_para.replace('.',',')
+concat_para=para.replace('.','.\n ')
 print(concat_para)
 
 f=open("Para_Swap.txt", "w")
+f.write("Title\n")
 f.write(concat_para)
 f.close()
