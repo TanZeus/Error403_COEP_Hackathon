@@ -1,0 +1,38 @@
+body{
+    background: whitesmoke;
+
+}
+a{
+  color: #f5f5f5;
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: wavy;
+  font-size: 30px;
+}
+.nav-button{
+    display: inline;
+    padding-top: 30px;
+    /* margin-bottom: 106px; */
+    margin-right: 120px;
+    font-size: 26px;
+    justify-content: center;
+}
+.btncontainer{
+    display: flex;
+    margin-left: 440px;
+}
+#Nav-bar{
+    margin-bottom: 36px;
+    color: antiquewhite;
+    background-color: black;
+    display: flex;
+}
+
+.logo{
+    margin-left: 16px;
+    
+}
+.logo-box{
+    display: inline-block;
+}
