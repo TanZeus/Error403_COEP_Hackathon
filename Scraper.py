@@ -3,6 +3,15 @@ from bs4 import BeautifulSoup
 import re
 import os 
 import pandas as pd
+from googlesearch import search
+
+
+res_url=[]
+que = input("Enter Keyword to find : ")
+def goosearch(query):
+  query += " site:news.google.com"
+  for url in search(query):
+    res_url.append(url)
 
 x=input("Enter URL : ")
 r=requests.get(x)
