@@ -7,36 +7,43 @@ import os
 import pandas as pd
 from googlesearch import search
 
-res_url=[]
+
+#Define how many requests you want to send.
+req=5
 para=""
+res_url=[]
 que = input("Enter Keyword to find : ")
 
-def goosearch(query):
+def goosearch(query,n):
     query += " site:news.google.com"
-    sleep(3)
-    qser = search(query, num_results=10)
+    sleep(1)
+    qser = search(query, num_results=n)
     for url in qser:
         res_url.append(url)
+    return res_url
 
 def fwrite(cpa):
-    f=io.open("Para_Swap.txt", "w", encoding="UTF-8")
-    f.write("Title\n")
+    f=io.open("newspara.txt", "w", encoding="UTF-8")
+    f.write("Content\n")
     f.write(cpa)
     f.close()
 
-goosearch(que)
-for i in range(len(res_url)):
-    x=res_url[i]
+def scraping(url):
     r=requests.get(x)
     tree = BeautifulSoup(r.content, 'html.parser')
-    good_html = tree.prettify()
+    return tree
+
+
+res_url=goosearch(que,req)
+for i in range(len(res_url)):
+    x=res_url[i]
+    tree=scraping(x)
     for hd in tree.find_all("h1"):
         hde=hd.text
-        print("HEAD - ", hde, "\n")
+        print("\n HEAD - ", hde, "\n")
     for ra in tree.find_all("p"):
         para1=ra.text
         para+=para1
-
+        print("Content - ", para1)
 concat_para=para.replace('.','.\n ')
-print(concat_para)
-
+fwrite(concat_para)
