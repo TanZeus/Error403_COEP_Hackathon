@@ -1,0 +1,5 @@
+{"text": "You are incredibly talented.", "cats" : {"negative":0.0 , "positive":1.0}} 
+{"text": "Great article!", "cats" : {"negative":0.0 , "positive":1.0}} 
+{"text": "This product was difficult to use.","cats":{"negative":1.0, "positive":0.0}}
+{"text": "The product was not as advertised.","cats":{"negative":1.0, "positive":0.0}}
+{"text": "I'm disappointed with this product.","cats":{"negative":1.0, "positive":0.0}}
