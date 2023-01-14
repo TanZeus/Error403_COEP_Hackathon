@@ -1,0 +1,19 @@
+convert:
+  cmd: python -m spacy run convert
+  script:
+    - python scripts/convert.py en assets/data.train.jsonl corpus/train.spacy
+    - python scripts/convert.py en assets/data.test.jsonl corpus/dev.spacy
+  deps:
+    - path: assets/data.train.jsonl
+      md5: f3ba84a5e8ba922beba8e9e2e4554e14
+    - path: assets/data.test.jsonl
+      md5: dc5c2371d63b58423c7bb20942a7a9b1
+    - path: scripts/convert.py
+      md5: fd36a17b3df175fb3fa8ee4ddb4d2d2d
+  outs:
+    - path: corpus/train.spacy
+      md5: e5a21950f65083608a814898131e1002
+    - path: corpus/dev.spacy
+      md5: 76783152b38a8689ed547628b4b2e4c4
+  spacy_version: 3.4.4
+  spacy_git_version: Unknown
